@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111827"><meta name="description" content="Orbit JEE Student OS — plan study, track learning, practise questions, and review progress with your own data.">
+  <title>Orbit JEE Student OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" aria-label="Orbit Student OS home"><span class="brand-symbol">◎</span><span>orbit<span class="brand-accent">.</span><small>JEE STUDENT OS</small></span></a>
+      <div class="sidebar-label">STUDY SPACE</div>
+      <nav class="nav-list" id="mainNav">
+        <a href="#dashboard" data-view="dashboard"><span class="nav-icon">◫</span>Dashboard</a>
+        <a href="#tasks" data-view="tasks"><span class="nav-icon">☑</span>Tasks & Today</a>
+        <a href="#planner" data-view="planner"><span class="nav-icon">▦</span>Daily planner</a>
+        <a href="#weekly" data-view="weekly"><span class="nav-icon">▥</span>Weekly planner</a>
+        <a href="#monthly" data-view="monthly"><span class="nav-icon">▦</span>Monthly planner</a>
+        <a href="#goals" data-view="goals"><span class="nav-icon">◎</span>Goals & targets</a>
+        <a href="#syllabus" data-view="syllabus"><span class="nav-icon">▤</span>Subjects & syllabus</a>
+        <a href="#topics" data-view="topics"><span class="nav-icon">⊞</span>Topic tracker</a>
+        <a href="#practice" data-view="practice"><span class="nav-icon">⌁</span>PYQ & practice</a>
+        <a href="#notes" data-view="notes"><span class="nav-icon">▧</span>Notes & formulas</a>
+        <a href="#revision" data-view="revision"><span class="nav-icon">↻</span>Revision planner</a>
+        <a href="#tests" data-view="tests"><span class="nav-icon">▣</span>Tests & mocks</a>
+        <a href="#analytics" data-view="analytics"><span class="nav-icon">▥</span>Analytics</a>
+        <a href="#calendar" data-view="calendar"><span class="nav-icon">▦</span>Calendar</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="local-status"><span class="status-dot"></span><span><strong>Private workspace</strong><small id="storageLabel">Saved on this device</small></span></div><button class="nav-settings" data-view="settings"><span>⚙</span> Settings & data</button></div>
+    </aside>
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <div class="breadcrumb"><span>Orbit</span><span class="crumb-sep">/</span><strong id="pageCrumb">Dashboard</strong></div>
+        <div class="topbar-actions"><span class="top-date" id="headerDate"></span><button class="icon-button" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">☼</button><button class="primary-button top-add" data-action="quick-add">＋ <span>Quick add</span></button></div>
+      </header>
+      <section id="appView" class="page-content" tabindex="-1" aria-live="polite"></section>
+      <footer class="app-footer"><span>ORBIT JEE STUDENT OS</span><span>Progress is recorded activity — mastery takes practice.</span></footer>
+    </main>
+  </div>
+  <dialog id="entityDialog" class="entity-dialog" aria-labelledby="dialogTitle"><form id="entityForm" method="dialog"><div class="dialog-head"><div><span class="eyebrow" id="dialogEyebrow">WORKSPACE</span><h2 id="dialogTitle">Add item</h2></div><button type="button" class="icon-button" data-action="close-dialog" aria-label="Close dialog">×</button></div><div id="dialogFields" class="dialog-fields"></div><div class="dialog-actions"><button type="button" class="secondary-button" data-action="close-dialog">Cancel</button><button type="submit" class="primary-button" id="dialogSubmit">Save item</button></div></form></dialog>
+  <dialog id="confirmDialog" class="confirm-dialog"><form method="dialog"><div class="dialog-head"><div><span class="eyebrow">PLEASE CONFIRM</span><h2 id="confirmTitle">Confirm action</h2></div></div><p id="confirmMessage"></p><div class="dialog-actions"><button class="secondary-button" value="cancel">Cancel</button><button class="danger-button" value="confirm" id="confirmAccept">Continue</button></div></form></dialog>
+  <div id="toastRegion" class="toast-region" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
